@@ -23,6 +23,12 @@ const dequeue = (pqueue) => {
     return pqueue.shift()
 }
 
+export default {
+    createPriorityQueue,
+    enqueue,
+    dequeue
+}
+
 // const queue = createPriorityQueue();
 // 
 // enqueue(queue, 1, 10);
