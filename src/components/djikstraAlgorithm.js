@@ -1,6 +1,6 @@
 import { createPriorityQueue, enqueue, dequeue } from './priorityQueue'
 
-const djikstraAlgorithm = (graph, startNode) => {
+const djikstraAlgorithm = (graph, startNode, endNode) => {
     let prices = {};
     let prevNode = {};
     const queue = createPriorityQueue();
@@ -27,14 +27,18 @@ const djikstraAlgorithm = (graph, startNode) => {
             const sumPrice = prices[currNode] + node.price;
 
             if (sumPrice < prices[node.node]) {
-                prices[node.node] = sumPrice;
                 prevNode[node.node] = currNode;
+                prices[node.node] = sumPrice;
                 enqueue(queue, node.node, prices[node.node])
             }
         }
 
     }
-    return prices;
+
+    if (prices[endNode] === Infinity) return "No path to this end node"
+    else {
+        return prices[endNode]
+    }
 
 }
 

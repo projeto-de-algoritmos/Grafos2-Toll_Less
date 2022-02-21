@@ -94,7 +94,7 @@ const dequeue = (pqueue) => {
 
 // ***************************************************************************
 
-const djikstraAlgorithm = (graph, startNode) => {
+const djikstraAlgorithm = (graph, startNode, endNode) => {
   let prices = {};
   let prevNode = {};
   const queue = createPriorityQueue();
@@ -128,7 +128,12 @@ const djikstraAlgorithm = (graph, startNode) => {
     }
 
   }
-  return prices;
+  //return prices;
+
+  if(prices[endNode] === Infinity) return "No path to this end node"
+  else {
+    return prices[endNode]
+  }
 
 }
 const graph = createGraph();
@@ -138,9 +143,9 @@ const pqueue = createPriorityQueue()
 // addDirectedLink(graph, 2, 4);
 // addDirectedLink(graph, 3, 4);
 generateNodes(graph, 10)
-generateLinks(graph, 10, 20)
+generateLinks(graph, 10, 30)
 
 printGraph(graph)
 
-p = djikstraAlgorithm(graph, 2);
+p = djikstraAlgorithm(graph, 2, 6);
 console.log(p)
