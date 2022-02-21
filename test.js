@@ -36,7 +36,7 @@ const printGraph = (graph) => {
     let conc = "";
 
     for (let j of nodes)
-      conc += j.node + " (price-> " + j.price + ") ";
+      conc += j.node + " (price-> " + j.price + ") |";
 
     console.log(i + " -> " + conc);
   }
@@ -136,16 +136,16 @@ const djikstraAlgorithm = (graph, startNode, endNode) => {
   }
 
 }
+
+// ******************************************************************************
+
+
 const graph = createGraph();
-const pqueue = createPriorityQueue()
-// addDirectedLink(graph, 1, 2);
-// addDirectedLink(graph, 2, 3);
-// addDirectedLink(graph, 2, 4);
-// addDirectedLink(graph, 3, 4);
+
 generateNodes(graph, 10)
 generateLinks(graph, 10, 30)
 
 printGraph(graph)
 
-p = djikstraAlgorithm(graph, 2, 6);
-console.log(p)
+const shortestPath = djikstraAlgorithm(graph, 2, 6);
+console.log(shortestPath)
