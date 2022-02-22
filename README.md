@@ -13,6 +13,10 @@
 O projeto tem como objetivo a implementação do algoritmo Dijkstra. Para isso, foi criada uma interface onde um grafo é gerado com nós e pesos aleatórios. É possível colocar um nó inicial e um final, e ele retornará o caminho de menor custo/peso para o destino desejado.
 
 ## Screenshots
+![Screenshot from 2022-02-22 00-57-37](https://user-images.githubusercontent.com/38709421/155060606-41373100-7343-4c2a-867a-8656648b2059.png)
+![Screenshot from 2022-02-22 00-58-02](https://user-images.githubusercontent.com/38709421/155060614-d69ee8d1-a60d-4e58-9060-72a1c5bab64d.png)
+![Screenshot from 2022-02-22 00-58-14](https://user-images.githubusercontent.com/38709421/155060615-fea5e1ff-a059-41e3-b191-a45ebedaf157.png)
+
 
 ## Instalação 
 **Linguagem**: Javascript<br>
