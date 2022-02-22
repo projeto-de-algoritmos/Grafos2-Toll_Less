@@ -14,6 +14,7 @@ function App() {
   const [firstNode, setFirstNode] = useState(0);
   const [lastNode, setLastNode] = useState(0);
   const [bestPath, setBestPath] = useState('');
+  const [printGraph, setPrintGraph] = useState('');
 
   const generateNodes = (graph, qtd) => {
     const nodes = [];
@@ -48,7 +49,7 @@ function App() {
   const onSubmit = (e) => {
     e.preventDefault();
     setBestPath(djikstraAlgorithm(currentGraph, firstNode, lastNode));
-    graph.printGraph(currentGraph);
+    setPrintGraph(graph.printGraph(currentGraph));
   };
 
   return (
@@ -112,8 +113,13 @@ function App() {
                 Buscar
               </button>
             </div>
-            {bestPath !== "" ? <div className="action mrg-top-20">
-              <span className="shortest-path">Melhor Caminho: {bestPath}</span>
+            {bestPath !== "" ? <div>
+              <div className="action mrg-top-20">
+                <span className="shortest-path">Melhor Preço: {bestPath}</span>
+              </div>
+              <div className="action mrg-top-20">
+                <span className="shortest-path">Grafo: {printGraph}</span>
+              </div>
             </div> : null}
           </form>
         </div>

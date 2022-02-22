@@ -9,16 +9,18 @@ const addDirectedLink = (graph, source, node, price) => {
 
 const printGraph = (graph) => {
   const vertices = graph.keys();
+  let finalGraph = "";
 
   for (let i of vertices) {
     const nodes = graph.get(i);
     let conc = "";
 
     for (let j of nodes) {
-      conc += j.node + " (price-> " + j.price + ") ";
+      conc += j.node + " (Preço-> " + j.price + ")";
     }
-    console.log(i + " -> " + conc);
+    finalGraph += "Vértice " + i + " -> Vizinhos: " + conc + "\n";
   }
+  return finalGraph;
 }
 
 export default {
