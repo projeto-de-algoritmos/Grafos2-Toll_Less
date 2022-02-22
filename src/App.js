@@ -113,7 +113,7 @@ function App() {
               </button>
             </div>
             {bestPath !== "" ? <div className="action mrg-top-20">
-              <span className="shortest-path">Menor Caminho: {bestPath}</span>
+              <span className="shortest-path">Melhor Caminho: {bestPath}</span>
             </div> : null}
           </form>
         </div>
