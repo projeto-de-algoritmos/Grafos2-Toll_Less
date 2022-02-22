@@ -11,17 +11,17 @@ const djikstraAlgorithm = (graph, startNode, endNode) => {
     const vertices = graph.keys();
 
     for (let vert of vertices) {
-        prevNode[vert] = null;
         if (vert !== startNode) prices[vert] = Infinity;
+        prevNode[vert] = null;
     }
 
     while (queue.length) {
         let minNode = dequeue(queue);
-        let currNode = minNode.element;
+        let currNode = Number(minNode.element);
 
         const nodes = graph.get(currNode);
 
-        if (!nodes.length) return "No path using this startNode";
+        if (!nodes.length) return "Sem caminho utilizando esse nó inicial";
 
         for (let node of nodes) {
             const sumPrice = prices[currNode] + node.price;
@@ -34,8 +34,7 @@ const djikstraAlgorithm = (graph, startNode, endNode) => {
         }
 
     }
-
-    if (prices[endNode] === Infinity) return "No path to this end node"
+    if (prices[endNode] === Infinity) return "Não é possível formar cmainho até o nó final"
     else {
         return prices[endNode]
     }

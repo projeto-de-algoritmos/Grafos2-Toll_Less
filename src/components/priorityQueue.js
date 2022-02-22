@@ -1,8 +1,8 @@
-const createPriorityQueue = () => {
+export const createPriorityQueue = () => {
     return [];
 }
 
-const enqueue = (pqueue, element, price) => {
+export const enqueue = (pqueue, element, price) => {
     let exists = false;
 
     for (let i = 0; i < pqueue.length; i++) {
@@ -17,31 +17,15 @@ const enqueue = (pqueue, element, price) => {
 
 }
 
-const dequeue = (pqueue) => {
+export const dequeue = (pqueue) => {
     if(!pqueue.length) throw "Is Empty!"
 
     return pqueue.shift()
 }
 
-export default {
-    createPriorityQueue,
-    enqueue,
-    dequeue
-}
-
-// const queue = createPriorityQueue();
-// 
-// enqueue(queue, 1, 10);
-// enqueue(queue, 2, 1);
-// enqueue(queue, 3, 20);
-// 
-// console.log(queue)
-// 
-// dequeue(queue)
-// console.log(queue)
-// dequeue(queue)
-// console.log(queue)
-// dequeue(queue)
-// console.log(queue)
-// dequeue(queue)
+// export default {
+//     createPriorityQueue,
+//     enqueue,
+//     dequeue
+// }
 
